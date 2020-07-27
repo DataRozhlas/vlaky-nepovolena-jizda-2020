@@ -1,4 +1,19 @@
 .light-gray-text {
   fill: #aaa;
-  color: #ff0000;
+  color: #aaa;
+}
+
+.eighteen {
+  fill: #009FB8;
+  font-weight: bold;
+}
+
+.nineteen {
+  fill: #3E80B6;
+  font-weight: bold;
+}
+
+.twenty {
+  fill: #e63946;
+  font-weight: bold;
 }

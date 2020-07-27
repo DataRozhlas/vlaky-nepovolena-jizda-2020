@@ -8,83 +8,45 @@
 /*
   TODO Set column color in series based on the name of the series when var colors' keys are named after the series
   I.e. sth like colors[this.name]
-  
-  TODO Set tooltip to display all three values 
 */
 
-var colors = {
-  'default': '#aaa',
-  '2020': '#e63946',
-  '2018': '#009FB8',
-  '2019': '#3E80B6',
-}
 
 Highcharts.chart('vis-container-navestidla', {
   chart: {
-      type: 'column',
-      style: {
-        fontFamily: 'Asap'
-      }
+      type: 'column'
   },
   title: {
-      text: 'Nehody při nedovolené jízdě za návěstidla zatím neobvykle nepřibývá', 
-      style: {
-        fontWeight: 'bold',
-        fontFamily: 'Noticia text'
-      }
+      text: 'Počet nedovolených jízd za návěstidla letos zatím není výrazný', 
+      useHTML: true,
   },
   subtitle: {
-      text: 'Nedovolené jízdy za návěstidla s nehodami i bez v letech 2018, 2019 a 2020'
+      useHTML: true,
+      text: 'Meziroční srovnání nepovolených jízd za návěstidla po měsících'
+              // + '<br><span style="color: #fff">.</span>',
   },
   xAxis: {
       categories: ['leden', 'únor', 'březen', 'duben', 'květen', 'červen', 'červenec', 'srpen', 'září', 'říjen', 'listopad', 'prosinec'],
-      // labels: {
-      //     formatter: function () {
-      //         if (['červen', 'červenec', 'srpen'].includes(this.value)) {
-      //             return '<span style="font-weight: bold; color: #000">' + this.value + '</span>';
-      //         } else {
-      //             return this.value;
-      //         }
-      //     }
-      // },
-      // plotBands: [{
-      //   color: '#f2f2f2',
-      //   from: 4.8,
-      //   to: 7.2,
-      //   label: {
-      //     text: 'Období s největšími<br>srážkami v roce',
-      //     style: {
-      //       color: '#444'
-
-      //     }
-      //   }
-      // }
-    // ]
   },
   yAxis: {
-    title: false,
-      // title: {
-      //     text: 'Úhrn srážek'
-      // },
+      title: {
+          text: 'nepovolené jízdy za návěstidla'
+      },
       // showFirstLabel: false,
-      labels: {
+      // labels: {
         // formatter: function() {
-        //   return this.value + '<br>jízd';
-        // }
-        formatter: function() {
-          if (this.isLast) {
-            return this.value + '<br>' +
-                        '<span class="light-gray-text">jízd za</span>' + '<br>' +
-                        '<span class="light-gray-text">návěstidla</span>'
-          } else {
-            return this.value
-          }
-        } 
-      }
+        //   if (this.isLast) {
+        //     return this.value + '<br>' +
+        //                 '<span class="light-gray-text">jízd za</span>' + '<br>' +
+        //                 '<span class="light-gray-text">návěstidla</span>'
+        //   } else {
+        //     return this.value
+        //   }
+        // } 
+      // }
   }, 
     tooltip: {
       valueSuffix: ' jízd',
-      // shared: true
+      shared: true
     },
   exporting: {
       enabled: false
@@ -96,22 +58,12 @@ Highcharts.chart('vis-container-navestidla', {
   plotOptions: {
       column: {
           dataLabels: {
-              enabled: true
+              enabled: false
           },
           enableMouseTracking: true,
-          color: colors.default,
-          lineWidth: 0.5,  
-          dataLabels: {
-            enabled: false
-          },
           pointPadding: 0.1,
           groupPadding: 0.15,
           borderWidth: 0,
-          marker: false
-          // marker: {
-          //   symbol: 'circle', 
-          //   radius: 2
-          // }
       }
   },
   series: [
@@ -127,7 +79,6 @@ Highcharts.chart('vis-container-navestidla', {
       radius: 2
     }
   },*/
-  // To, co je uvedeno jako prvni se kresli jako prvni, tudiz ostatni veci to muzou prekreslit
   {
     name: '2018',
     data :[12,15,6,8,19,12,13,12,23,11,15,2],

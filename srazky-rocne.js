@@ -1,115 +1,102 @@
-/*
- ! alert
- ? question
- TODO task
- * important, prej
-*/
+let chartWidth =
+  document.getElementById("vis-srazky-rocne").offsetWidth > 600
+    ? 600
+    : document.getElementById("vis-srazky-rocne").offsetWidth;
 
-// TODO Turn off animation of the chart?
-
-var colors = {
-  'default': '#aaa',
-  '2020': '#e63946',
-  '2018': '#009FB8',
-  '2019': '#3E80B6',
-}
-
-let chartWidth = document.getElementById('vis-srazky-rocne').offsetWidth > 600 ? 600 : document.getElementById('vis-srazky-rocne').offsetWidth
-
-Highcharts.chart('vis-srazky-rocne', {
+Highcharts.chart("vis-srazky-rocne", {
   chart: {
-      type: 'column',
-      height: 320,
-      // width: 400,
-      width: chartWidth,
-      style: {
-        fontFamily: 'Asap',
-        fontSize: '1rem'
-      },
-      animation: false
+    type: "column",
+    height: 320,
+    left: '10px',
+    width: chartWidth
   },
   title: {
-      text: 'Srážky vlaků v prvním pololetí', // V první polovině roku je nehod méně než loni', 
-      style: {
-        fontWeight: 'bold',
-        fontFamily: 'Noticia text'
-      }
+    text: "Nehodovosti v&nbsp;první polovině roku mírně stoupla", // V první polovině roku je nehod méně než loni',
+    useHTML: true
   },
   subtitle: {
-    text: 'zahrnuje střet jako následek nepovoleného projetí návěstidla',
-      style: {
-        fontSize: '0.85rem'
-      }
+    text: "Zatím ale nemůžeme hovořit o&nbsp;trendu",
+    useHTML: true
   },
   xAxis: {
-    categories: ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020'],
+    categories: [
+      "2010",
+      "2011",
+      "2012",
+      "2013",
+      "2014",
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+    ],
     labels: {
-      enabled: true
-    }
-  },
-  legend: {
-    enableMouseTracking: false
+      enabled: true,
+    },
+    plotLines: [{
+      value: 0,
+      width: 0,
+      zIndex: 10000,
+      label: {
+        text: 'Počet srážek<br>vlaků',
+        rotation: 0,
+        y: 60,
+      }
+    }],
   },
   yAxis: {
     title: false,
     gridZIndex: 4,
     gridLineWidth: 2,
-    gridLineColor: '#fff',
+    gridLineColor: "#fff",
     tickPixelInterval: 30,
     tickInterval: 1,
     labels: {
-      enabled: false,
-      align: 'center',
-      formatter: function() {
-        if (this.isLast) {
-          return this.value + '<br>' +
-                      '<span class="light-gray-text">nehod</span>'
-        } else {
-          return this.value
-        }
-      } 
-    }
-  }, 
-    tooltip: {
-      valueSuffix: ' jízd',
-      // shared: true
-    },
-  exporting: {
       enabled: false
+    }
+  },
+  legend: {
+    enabled: false,
+  },
+  tooltip: {
+    valueSuffix: " jízd",
+    // shared: true
+  },
+  exporting: {
+    enabled: false,
   },
   credits: {
-      // href : 'http://portal.chmi.cz/historicka-data/pocasi/uzemni-srazky',
-      text : 'Zdroj: TODO'
+    // href : 'http://portal.chmi.cz/historicka-data/pocasi/uzemni-srazky',
+    text: "Zdroj: TODO",
   },
   plotOptions: {
-      column: {
-          dataLabels: {
-              enabled: true
-          },
-          enableMouseTracking: false,
-          pointPadding: 0,
-          pointWidth: chartWidth / 20
-          // pointWidth: function(chart) { console.log(this); return 10}() //this.chart.width / 12
-      }, 
-      series: {
-        events: {
-          legendItemClick: function(e) {
-              e.preventDefault();
-          }
-      }
-      }
+    column: {
+      dataLabels: {
+        enabled: true,
+        style: {
+          fontSize: '0.8rem'
+        }
+      },
+      enableMouseTracking: false,
+      pointPadding: 0,
+      pointWidth: chartWidth / 20,
+    },
+    series: {
+      // disable legend clicking
+      events: {
+        legendItemClick: function (e) {
+          e.preventDefault();
+        },
+      },
+    },
   },
   series: [
-  {
-    name: 'Srážky',
-    data: [0,2,1,2,2,2,1,4,4,6,{ y: 4, color: colors['2020']}],
-    color: '#424b54'
-  }],
-  // responsive: {
-  //   rules: [{
-  //     condition: {
-  //       maxWidth: 500
-  //     }
-  //   }]
-  // }
+    {
+      name: "Srážky",
+      data: [0, 2, 1, 2, 2, 2, 1, 4, {y: 4, color: colors['2018']}, { y: 6, color: colors['2019']}, { y: 4, color: colors["2020"] }],
+      color: "#424b54",
+    },
+  ]
 });

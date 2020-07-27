@@ -1,94 +1,54 @@
-/*
- ! alert
- ? question
- TODO task
- * important, prej
-*/
+let chartWidthNehody =
+  document.getElementById("vis-nehody-rocne").offsetWidth > 600
+    ? 600
+    : document.getElementById("vis-nehody-rocne").offsetWidth;
 
-// TODO Turn off animation of the chart?
-
-var colors = {
-  'default': '#aaa',
-  '2020': '#e63946',
-  '2018': '#009FB8',
-  '2019': '#3E80B6',
-}
 
 Highcharts.chart('vis-nehody-rocne', {
   chart: {
       type: 'column',
-      height: 300,
-      style: {
-        fontFamily: 'Asap'
-      },
-      animation: false
+      width: chartWidthNehody
   },
   title: {
-      text: 'V první polovině roku je nehod méně než loni', 
-      style: {
-        fontWeight: 'bold',
-        fontFamily: 'Noticia text'
-      }
+      text: 'V první polovině roku došlo k&nbsp;nepovolných průjezdem návěstidel méně než vloni',
+      useHTML: true
   },
   subtitle: {
-      text: 'Nedovolené jízdy za návěstidla s nehodami i bez v letech 2018, 2019 a 2020'
+      text: 'Celkový počet nepovolených průjezdů byl v&nbsp;loňském prvním pololetí vyšší než letos',
+      // + '<br><span style="color: #fff">.</span>',
+      useHTML: true,
   },
   xAxis: {
-    categories: ['a', 'b', 'c'],
+    categories: ['<span class="eighteen">2018</span>', 
+                 '<span class="nineteen">2019</span>', 
+                 '<span class="twenty">2020</span>'],
     labels: {
       enabled: true
     }
-      // categories: ['leden', 'únor', 'březen', 'duben', 'květen', 'červen', 'červenec', 'srpen', 'září', 'říjen', 'listopad', 'prosinec'],
-      // labels: {
-      //     formatter: function () {
-      //         if (['červen', 'červenec', 'srpen'].includes(this.value)) {
-      //             return '<span style="font-weight: bold; color: #000">' + this.value + '</span>';
-      //         } else {
-      //             return this.value;
-      //         }
-      //     }
-      // },
-      // plotBands: [{
-      //   color: '#f2f2f2',
-      //   from: 4.8,
-      //   to: 7.2,
-      //   label: {
-      //     text: 'Období s největšími<br>srážkami v roce',
-      //     style: {
-      //       color: '#444'
-
-      //     }
-      //   }
-      // }
-    // ]
   },
   yAxis: {
-    title: false,
-    // categories: ['a', 'b', 'c'],
-
-      // title: {
-      //     text: 'Úhrn srážek'
-      // },
-      // showFirstLabel: false,
-      labels: {
-        // formatter: function() {
-        //   return this.value + '<br>jízd';
-        // }
-        formatter: function() {
-          if (this.isLast) {
-            return this.value + '<br>' +
-                        '<span class="light-gray-text">jízd za</span>' + '<br>' +
-                        '<span class="light-gray-text">návěstidla</span>'
-          } else {
-            return this.value
-          }
-        } 
-      }
-  }, 
-    tooltip: {
-      valueSuffix: ' jízd',
-      // shared: true
+    title: {
+      text: 'nepovolené jízdy za návěstidla'
     },
+    // labels: {
+    //   formatter: function() {
+    //     if (this.isLast) {
+    //       return this.value + '<br>' +
+    //                   '<span class="light-gray-text">jízd za</span>' + '<br>' +
+    //                   '<span class="light-gray-text">návěstidla</span>'
+    //     } else {
+    //       return this.value
+    //     }
+    //   } 
+    // }
+  }, 
+  legend: {
+    enabled: false
+  },
+  tooltip: {
+    valueSuffix: ' jízd',
+    // shared: true
+  },
   exporting: {
       enabled: false
   },
@@ -97,25 +57,13 @@ Highcharts.chart('vis-nehody-rocne', {
       text : 'Zdroj: TODO'
   },
   plotOptions: {
-      column: {
-          dataLabels: {
-              enabled: true
-          },
-          enableMouseTracking: false,
-          pointPadding: 0,
-          // groupPadding: 10,
-          // pointWidth: 10,
-          // color: colors.default,
-          // lineWidth: 0.5,  
-          // dataLabels: {
-          //   enabled: false
-          // },
-          // marker: false
-          // marker: {
-          //   symbol: 'circle', 
-          //   radius: 2
-          // }
-      }
+    column: {
+      dataLabels: {
+          enabled: true
+      },
+      enableMouseTracking: false,
+      pointPadding: 0
+    }
   },
   series: [
   /*{ Mockup
