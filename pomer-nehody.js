@@ -4,7 +4,7 @@ Highcharts.chart('vis-pomer-nehody', {
       height: 300
   },
   title: {
-      text: 'Srážky jsou důsledkem nepovolených prujezdů návěstidly jen v&nbsp;řádu jednotek', 
+      text: 'Srážky jsou důsledkem nepovolených prujezdů návěstidly pouze v&nbsp;jednotkách případů', 
       useHTML: true
   },
   subtitle: {

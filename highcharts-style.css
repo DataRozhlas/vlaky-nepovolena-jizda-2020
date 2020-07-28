@@ -16,20 +16,24 @@ p {
 
 .highcharts-subtitle {
   text-align: left !important; 
-  font-size: 0.9rem !important; 
+  font-size: 0.95rem !important; 
   left: 10px !important;
   font-family: "Asap" !important;
 }
 
 .highcharts-data-labels text {
-  font-size: 0.8rem !important;
+  font-size: 0.85rem !important;
 }
 
 .highcharts-axis-labels text {
-  font-size: 0.8rem !important;
+  font-size: 0.85rem !important;
 }
 
 text.highcharts-plot-line-label {
-  font-size: 0.8rem !important;
+  font-size: 0.85rem !important;
   fill: #666;
+}
+
+text.highcharts-credits {
+  font-size: 0.75rem !important;
 }

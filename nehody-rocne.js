@@ -10,7 +10,7 @@ Highcharts.chart('vis-nehody-rocne', {
       width: chartWidthNehody
   },
   title: {
-      text: 'V první polovině roku došlo k&nbsp;nepovolným průjezdem návěstidel méně než vloni',
+      text: 'V první polovině roku docházelo k&nbsp;nepovoleným průjezdům návěstidel méně než vloni',
       useHTML: true
   },
   subtitle: {

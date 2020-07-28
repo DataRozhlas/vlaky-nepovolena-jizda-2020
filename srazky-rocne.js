@@ -11,7 +11,7 @@ Highcharts.chart("vis-srazky-rocne", {
     width: chartWidth
   },
   title: {
-    text: "Nehodovosti v&nbsp;první polovině roku mírně stoupla", // V první polovině roku je nehod méně než loni',
+    text: "Nehodovost v&nbsp;první polovině roku mírně stoupla", // V první polovině roku je nehod méně než loni',
     useHTML: true
   },
   subtitle: {

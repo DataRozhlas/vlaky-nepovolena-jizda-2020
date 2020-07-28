@@ -16,7 +16,7 @@ Highcharts.chart('vis-container-navestidla', {
       type: 'column'
   },
   title: {
-      text: 'Počet nedovolených jízd za návěstidla letos zatím není výrazný', 
+      text: 'Počet nedovolených jízd za návěstidla není zatím letos výrazný', 
       useHTML: true,
   },
   subtitle: {
