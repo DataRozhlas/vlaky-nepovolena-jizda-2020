@@ -18,6 +18,11 @@ Highcharts.chart("vis-srazky-rocne", {
     text: "Zatím ale nemůžeme hovořit o&nbsp;trendu",
     useHTML: true
   },
+  credits: {
+    enabled: false
+  //   // href : 'http://portal.chmi.cz/historicka-data/pocasi/uzemni-srazky',
+  //   // text: "Zdroj: TODO",
+  },
   xAxis: {
     categories: [
       "2010",
@@ -66,10 +71,6 @@ Highcharts.chart("vis-srazky-rocne", {
   },
   exporting: {
     enabled: false,
-  },
-  credits: {
-    // href : 'http://portal.chmi.cz/historicka-data/pocasi/uzemni-srazky',
-    text: "Zdroj: TODO",
   },
   plotOptions: {
     column: {

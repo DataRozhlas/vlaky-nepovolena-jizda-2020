@@ -10,7 +10,7 @@ Highcharts.chart('vis-nehody-rocne', {
       width: chartWidthNehody
   },
   title: {
-      text: 'V první polovině roku došlo k&nbsp;nepovolných průjezdem návěstidel méně než vloni',
+      text: 'V první polovině roku došlo k&nbsp;nepovolným průjezdem návěstidel méně než vloni',
       useHTML: true
   },
   subtitle: {
@@ -53,8 +53,8 @@ Highcharts.chart('vis-nehody-rocne', {
       enabled: false
   },
   credits: {
-      // href : 'http://portal.chmi.cz/historicka-data/pocasi/uzemni-srazky',
-      text : 'Zdroj: TODO'
+      href : 'http://www.dicr.cz/statistiky-mimoradnych-udalosti',
+      text : 'Zdroj: Drážní inspekce'
   },
   plotOptions: {
     column: {

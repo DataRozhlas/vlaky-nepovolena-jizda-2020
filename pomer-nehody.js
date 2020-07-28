@@ -4,12 +4,17 @@ Highcharts.chart('vis-pomer-nehody', {
       height: 300
   },
   title: {
-      text: 'Srážky jako následky mimořádných událostí se pohybují v&nbsp;řádu jednotek', 
+      text: 'Srážky jsou důsledkem nepovolených prujezdů návěstidly jen v&nbsp;řádu jednotek', 
       useHTML: true
   },
   subtitle: {
       useHTML: true,
-      text: 'Počet srážek vlaků jako následek nepovolených průjezdů je malý',
+      text: //'V letošním roce došlo k 72 průjezdům z nichž 4 skončily srážkou a 68 beze srážky' +
+        '<text class="highcharts-plot-line-label">Nepovolené průjezdy se srážkou jsou vyznačeny sytou barvou, nepovolené průjezdy bez srážky jemným odstínem.</text>',
+  },
+  credits: {
+    href : 'http://www.dicr.cz/statistiky-mimoradnych-udalosti',
+    text : 'Zdroj: Drážní inspekce'
   },
   xAxis: {
     categories: ['rok<br>2018', 'rok<br>2019', 'rok<br>2020'],
@@ -23,10 +28,6 @@ Highcharts.chart('vis-pomer-nehody', {
   exporting: {
       enabled: false
   },
-  credits: {
-      // href : 'http://portal.chmi.cz/historicka-data/pocasi/uzemni-srazky',
-      text : 'Zdroj: TODO'
-  },
   legend: {
     enabled: false
   },
@@ -38,7 +39,12 @@ Highcharts.chart('vis-pomer-nehody', {
               style: {
                 textOutline: 0,
                 fontSize: '0.85rem'
-              }
+              },
+              // formatter: function() {
+              //   console.log(this)
+              //   return this.colorIndex == 1 ? this.y : this.y + ' nepovolených průjezdů bez srážky'
+              //   return this.y + ' nepovolených průjezdů bez srážky'
+              // }
           },
           groupPadding: 0.05,
           pointPadding: 0,
@@ -50,9 +56,9 @@ Highcharts.chart('vis-pomer-nehody', {
     name: 'mimořádné události bez srážky',
     fill: '#fff',
     // data: [{y: 68, borderColor: colors['2018-light'], color: '#fff' }, 
-    data: [{y: 68, color: colors['2018'], opacity: 0.2 }, 
-           {y: 81, color: colors['2019'], opacity: 0.2 },
-           {y: 72, color: colors['2020'], opacity: 0.2 }],
+    data: [{y: 68, color: colors['2018'], opacity: 0.25 }, 
+           {y: 81, color: colors['2019'], opacity: 0.25 },
+           {y: 72, color: colors['2020'], opacity: 0.25 }],
   },
   {
     name: 'srážky',

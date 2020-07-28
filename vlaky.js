@@ -52,8 +52,8 @@ Highcharts.chart('vis-container-navestidla', {
       enabled: false
   },
   credits: {
-      // href : 'http://portal.chmi.cz/historicka-data/pocasi/uzemni-srazky',
-      text : 'Zdroj: TODO'
+    href : 'http://www.dicr.cz/statistiky-mimoradnych-udalosti',
+    text : 'Zdroj: Drážní inspekce'
   },
   plotOptions: {
       column: {
