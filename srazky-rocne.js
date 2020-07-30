@@ -11,7 +11,7 @@ Highcharts.chart("vis-srazky-rocne", {
     width: chartWidth
   },
   title: {
-    text: "Nehodovost v&nbsp;období leden⁠⁠–⁠červenec mírně stoupla", // V první polovině roku je nehod méně než loni',
+    text: "Kolizí vlaků v&nbsp;období leden⁠⁠–⁠červenec mírně přibylo", // V první polovině roku je nehod méně než loni',
     useHTML: true
   },
   subtitle: {
@@ -45,7 +45,7 @@ Highcharts.chart("vis-srazky-rocne", {
       width: 0,
       zIndex: 10000,
       label: {
-        text: 'Počet srážek<br>vlaků',
+        text: 'Všechny srážky<br>vlaků',
         rotation: 0,
         y: 60,
       }
