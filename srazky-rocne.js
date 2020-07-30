@@ -11,7 +11,7 @@ Highcharts.chart("vis-srazky-rocne", {
     width: chartWidth
   },
   title: {
-    text: "Nehodovost v&nbsp;první polovině roku mírně stoupla", // V první polovině roku je nehod méně než loni',
+    text: "Nehodovost v&nbsp;období leden⁠⁠–⁠červenec mírně stoupla", // V první polovině roku je nehod méně než loni',
     useHTML: true
   },
   subtitle: {
@@ -96,7 +96,7 @@ Highcharts.chart("vis-srazky-rocne", {
   series: [
     {
       name: "Srážky",
-      data: [0, 2, 1, 2, 2, 2, 1, 4, {y: 4, color: colors['2018']}, { y: 6, color: colors['2019']}, { y: 4, color: colors["2020"] }],
+      data: [1, 2, 1, 2, 3, 2, 2, 4, {y: 5, color: colors['2018']}, { y: 7, color: colors['2019']}, { y: 7, color: colors["2020"] }],
       color: "#424b54",
     },
   ]

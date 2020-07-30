@@ -56,15 +56,15 @@ Highcharts.chart('vis-pomer-nehody', {
     name: 'mimořádné události bez srážky',
     fill: '#fff',
     // data: [{y: 68, borderColor: colors['2018-light'], color: '#fff' }, 
-    data: [{y: 68, color: colors['2018'], opacity: 0.25 }, 
-           {y: 81, color: colors['2019'], opacity: 0.25 },
-           {y: 72, color: colors['2020'], opacity: 0.25 }],
+    data: [{y: 80, color: colors['2018'], opacity: 0.25 }, 
+           {y: 90, color: colors['2019'], opacity: 0.25 },
+           {y: 81, color: colors['2020'], opacity: 0.25 }],
   },
   {
     name: 'srážky',
-    data: [{y: 4, color: colors['2018'] }, 
-           {y: 6, color: colors['2019'] },
-           {y: 4, color: colors['2020'] }],    
+    data: [{y: 5, color: colors['2018'] }, 
+           {y: 7, color: colors['2019'] },
+           {y: 7, color: colors['2020'] }],    
   },
 ]
 });

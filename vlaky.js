@@ -92,7 +92,7 @@ Highcharts.chart('vis-container-navestidla', {
   },
   {
     name: '2020',
-    data: [15,15,11,10,7,18,0,0,0,0,0,0],
+    data: [15,15,11,10,7,18,12],
     color: colors['2020']
     // color: colors[function() { console.log(this); return '2020' }()]
   },

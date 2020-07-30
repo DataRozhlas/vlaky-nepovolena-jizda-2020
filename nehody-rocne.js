@@ -10,7 +10,7 @@ Highcharts.chart('vis-nehody-rocne', {
       width: chartWidthNehody
   },
   title: {
-      text: 'V první polovině roku docházelo k&nbsp;nepovoleným průjezdům návěstidel méně než vloni',
+      text: 'V období leden⁠⁠–⁠červenec docházelo k&nbsp;nepovoleným průjezdům návěstidel méně než vloni',
       useHTML: true
   },
   subtitle: {
@@ -98,9 +98,9 @@ Highcharts.chart('vis-nehody-rocne', {
   // },
   {
     name: 'Celkový počet mimořádných událostí',
-    data: [{ y: 72, color: colors['2018']},
-          { y: 87, color: colors['2019']},
-          { y: 76, color: colors['2020']}]
+    data: [{ y: 85, color: colors['2018']},
+          { y: 97, color: colors['2019']},
+          { y: 88, color: colors['2020']}]
   }
 ]
 });
